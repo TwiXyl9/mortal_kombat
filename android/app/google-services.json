@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1031882559547",
+    "project_id": "mortal-combat-3af66",
+    "storage_bucket": "mortal-combat-3af66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031882559547:android:c2e7024dfe5c38e4804c1e",
+        "android_client_info": {
+          "package_name": "com.example.mortal_combat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031882559547-or1i9qbe9oisqr4a9g5ecf6i2di77t4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mortal_combat",
+            "certificate_hash": "6fafb44be25a14e5ebfc55bebc30da9d7166f970"
+          }
+        },
+        {
+          "client_id": "1031882559547-obned83874pbenbfdsu3uc4v6ade0gfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv1bHxN-zEJ9Lo8JJa05Fe8Z4M5Q1T8UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031882559547-obned83874pbenbfdsu3uc4v6ade0gfm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1031882559547-e40nm7hgtc5u14k073bvi2sgnbscpbd4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mortalCombat.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

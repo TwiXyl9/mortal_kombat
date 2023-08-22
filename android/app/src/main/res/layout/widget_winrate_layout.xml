@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_root"
+    android:layout_width="300dp"
+    android:layout_height="250dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_layout"
+        android:backgroundTint="#383838"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/character_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rounded_layout"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/character_image"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/rounded_layout"
+                android:clipToOutline="true"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/character_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:textColor="#FFF"
+                android:textSize="17dp"
+                tools:text="Scorpion" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statistic_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/character_info"
+            android:background="@drawable/rounded_layout"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/last_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#FFF"
+                android:textSize="17dp"
+                tools:text="Today: 63%" />
+
+            <TextView
+                android:id="@+id/high_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#FFF"
+                android:textSize="17dp"
+                tools:text="Highest: 80%" />
+
+            <TextView
+                android:id="@+id/diff_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="#4CAF50"
+                android:textSize="17dp"
+                tools:text="Increase on 9%" />
+
+            <ImageView
+                android:id="@+id/winrate_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:src="@tools:sample/avatars" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_bt"
+            style="@style/AddButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_layout"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:maxHeight="20dp"
+            android:padding="12dp"
+            android:text="+ Add character"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+</FrameLayout>
