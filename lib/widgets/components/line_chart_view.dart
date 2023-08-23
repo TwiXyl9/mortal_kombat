@@ -12,11 +12,14 @@ import '../../controllers/characters_controller.dart';
 import '../../models/character/character.dart';
 import '../../models/win_rate/win_rate.dart';
 
+enum ChartMode {full, short}
+
 class LineChart extends ConsumerWidget {
   final Character character;
+  final ChartMode mode;
   final GlobalKey<SfCartesianChartState> cartesianChartKey;
 
-  LineChart({super.key, required this.character, required this.cartesianChartKey});
+  LineChart({super.key, required this.character, required this.cartesianChartKey, this.mode = ChartMode.full});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,10 +27,10 @@ class LineChart extends ConsumerWidget {
         plotAreaBorderWidth: 0,
         key: cartesianChartKey,
         primaryXAxis: CategoryAxis(
-            isVisible: false
+            isVisible: mode == ChartMode.full? true : false
         ),
         primaryYAxis: CategoryAxis(
-            isVisible: false
+            isVisible: mode == ChartMode.full? true : false
         ),
         series: <ChartSeries<WinRate, String>>[
           SplineAreaSeries<WinRate, String>(

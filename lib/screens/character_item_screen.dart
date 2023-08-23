@@ -26,6 +26,7 @@ class CharacterItemScreen extends ConsumerWidget {
       data: (characters) {
           Character? character = characters.firstWhere((element) => element.id == id);
           return Scaffold(
+            backgroundColor: Colors.black54,
             appBar: AppBar(
               automaticallyImplyLeading: false,
               title: character == null? Text('Error') : Text(character!.name),
@@ -40,7 +41,7 @@ class CharacterItemScreen extends ConsumerWidget {
                 child: Column(
                   children: [
                     Image.network(character!.imgUrl),
-                    character.rates != null?
+                    (character.rates != null && character.rates!.length > 0)?
                     LineChart(character: character, cartesianChartKey: GlobalKey()) :
                     Container(),
                   ],
@@ -48,8 +49,8 @@ class CharacterItemScreen extends ConsumerWidget {
               ),
             ),
             floatingActionButton: FloatingActionButton(
-                onPressed: () {
-                  ref.read(charactersControllerProvider.notifier).deleteCharacter(character: character);
+                onPressed: () async {
+                  await ref.read(charactersControllerProvider.notifier).deleteCharacter(character: character);
                   locator<NavigationHelper>().navigateTo(charactersRoute);
                 },
                 child: const Icon(Icons.delete,)

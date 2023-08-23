@@ -23,7 +23,6 @@ class CharacterWinRateRepository {
       final snap = await _ref.read(firebaseFirestoreProvider)
           .characterWinRateRef(characterId)
           .get();
-      print(snap.docs.map((doc) => WinRate.fromDocument(doc)).toList());
       return snap.docs.map((doc) => WinRate.fromDocument(doc)).toList();
     } on FirebaseException catch (e) {
       throw CustomException(message: e.message);

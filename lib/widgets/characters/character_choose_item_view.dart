@@ -32,6 +32,7 @@ class CharacterChooseItemView extends ConsumerWidget {
       data.chart = LineChart(
         character: data.character,
         cartesianChartKey: cartesianChartKey,
+        mode: ChartMode.short,
       );
       data.key = cartesianChartKey;
     }

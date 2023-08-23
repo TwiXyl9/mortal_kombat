@@ -57,7 +57,15 @@ class CharactersRepository implements BaseCharactersRepository {
       final snap = await _ref.read(firebaseFirestoreProvider)
           .collection('characters')
           .get();
-      return snap.docs.map((doc) => Character.fromDocument(doc)).toList();
+      return Future.wait(
+          snap.docs.map(
+                  (doc) async {
+                    Character character = Character.fromDocument(doc);
+                    final rates = await _ref.read(charactersWinRateRepositoryProvider).getWinRate(character.id!);
+                    return character.copyWith(rates: rates);
+                  }
+          ).toList()
+      );
     } on FirebaseException catch (e) {
       throw CustomException(message: e.message);
     }
